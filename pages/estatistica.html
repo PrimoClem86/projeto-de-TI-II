@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estatísticas do Motorista</title>
+    <link rel="stylesheet" href="../assets/css/estatistica.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Estatísticas do Motorista</h1>
+        <form id="statsForm">
+            <label for="motorista">Motorista</label>
+            <input type="text" id="motorista" name="motorista" required>
+
+            <label for="placa">Placa do veículo</label>
+            <input type="text" id="placa" name="placa" required>
+
+            <label for="data">Data</label>
+            <input type="date" id="data" name="data" required>
+
+            <label for="hora">Hora</label>
+            <input type="time" id="hora" name="hora" required>
+
+            <button type="submit">Pesquisar</button>
+        </form>
+        <div class="chart">
+            <h2>Quilometragem Total vs Hora da Saída</h2>
+            <div class="bar" style="height: 60%;">Quilometragem Total</div>
+            <div class="bar" style="height: 40%;">Hora da Saída</div>
+        </div>
+    </div>
+    <script src="../assets/js/estatistica.js"></script>
+    <script src="../assets/js/principal.js"></script>
+    
+</body>
+</html>

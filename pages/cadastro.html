@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
+    <link rel="stylesheet" href="../assets/css/cadastro.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Cadastro de Usuário</h1>
+
+            <div id="msgError"></div>
+            <div id="msgSuccess"></div>
+
+            <form id="formCadastro">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="cargo">Cargo:</label>
+                <input type="text" id="cargo" name="cargo" required>
+
+                <label for="matricula">Matrícula:</label>
+                <input type="text" id="matricula" name="matricula" required>
+
+                <label for="telefone">Telefone:</label>
+                <input type="text" id="telefone" name="telefone" required>
+
+                <label for="usuario">Usuário:</label>
+                <input type="text" id="usuario" name="usuario" required>
+
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+                <i id="verSenha" class="fa fa-eye" aria-hidden="true"></i>
+
+                <label for="confirmsenha">Confirmar Senha:</label>
+                <input type="password" id="confirmsenha" name="confirmsenha" required>
+                <i id="verSenha" class="fa fa-eye" aria-hidden="true"></i>
+                
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Verificar se as senhas correspondem
+        const form = document.getElementById('formCadastro');
+        const senha = document.getElementById('senha');
+        const confirmSenha = document.getElementById('confirmsenha');
+        const msgError = document.getElementById('msgError');
+        const msgSuccess = document.getElementById('msgSuccess');
+
+        form.addEventListener('submit', function (e) {
+            if (senha.value !== confirmSenha.value) {
+                e.preventDefault(); // Impede o envio do formulário
+                msgError.textContent = 'As senhas não coincidem!';
+                msgError.style.color = 'red';
+            } else {
+                msgSuccess.textContent = 'Usuário cadastrado com sucesso!';
+                msgSuccess.style.color = 'green';
+            }
+        });
+
+        // Lógica para mostrar/ocultar senha (opcional)
+        const verSenha = document.getElementById('verSenha');
+        verSenha.addEventListener('click', function () {
+            if (senha.type === 'password') {
+                senha.type = 'text';
+                verSenha.classList.remove('fa-eye');
+                verSenha.classList.add('fa-eye-slash');
+            } else {
+                senha.type = 'password';
+                verSenha.classList.remove('fa-eye-slash');
+                verSenha.classList.add('fa-eye');
+            }
+        });
+    </script>
+    <script src="../assets/js/principal.js"></script>
+</body>
+</html>

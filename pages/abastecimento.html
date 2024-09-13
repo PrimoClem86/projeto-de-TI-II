@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abastecimento</title>
+    <link rel="stylesheet" href="../assets/css/abastecimento.css">
+</head>
+<body>
+    <header>
+        <p>Funcionário: Nome <br> Matrícula:</p>
+    </header>
+
+    <main>
+        <h1>Inserir dados do abastecimento</h1>
+        <div class="form-container">
+            <form id="abastecimento-form">
+                <div class="input-group">
+                    <label for="placa">Placa do veículo</label>
+                    <input type="text" id="placa" name="placa" required>
+                </div>
+                <div class="input-group">
+                    <label for="quilometragem">Quilometragem</label>
+                    <input type="number" id="quilometragem" name="quilometragem" required>
+                </div>
+                <div class="input-group">
+                    <label for="litros">Litros</label>
+                    <input type="number" id="litros" name="litros" required>
+                </div>
+                <div class="input-group">
+                    <label for="valor">Valor</label>
+                    <input type="number" id="valor" name="valor" required>
+                </div>
+                <div class="input-group">
+                    <label for="data">Data</label>
+                    <input type="date" id="data" name="data" required>
+                </div>
+                <div class="input-group">
+                    <label for="hora">Hora</label>
+                    <input type="time" id="hora" name="hora" required>
+                </div>
+                <button type="submit">Finalizar</button>
+            </form>
+            <div class="image-container">
+                <img src="../assets/images/abastecimento.jpg" alt="Abastecimento">
+            </div>
+        </div>
+    </main>
+
+    <script src="../assets/js/abastecimento.js"></script>
+    <script src="../assets/js/principal.js"></script>
+</body>
+</html>
